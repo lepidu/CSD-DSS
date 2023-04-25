@@ -1,0 +1,2 @@
+1.400MB
+https://www.kaggle.com/datasets/leopeng2019/cryptocurrency-historical-1minprices
