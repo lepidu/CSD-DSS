@@ -1,2 +1,5 @@
-1.400MB
+1.import csv file into mongodb
+mongoimport -d test -c TESTCSV --type csv --file employees.csv --headerline;
+
+link downbelow:
 https://www.kaggle.com/datasets/rulyjanuarfachmi/domesticusairflight2016-2018
