@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8">
+		<title> Flight List </title>
+        <link rel="stylesheet" href="style.css"/> 
+	</head>
+    <body>
+    
+    <div class="container">
+    	<div class="row">
+    		<h1>Flights List </h1>
+    	</div>
+        	<table id="table">
+			<thead>
+          		<tr>
+               			<th>ID</th>
+               			<th>Year</th>
+               			<th>Month</th>
+						<th>Day</th>
+						<th>Departure Time</th>
+               			<th>Origin</th>
+               			<th>Destination</th>
+						<th>Distance</th>
+            	</tr>
+        	</thead>
+			<tbody>
+			
+			<tr th:each="flights : ${flights}">
+               			<td th:text="${flights.id}">ID</td>
+               			<td th:text="${flights.year}">Year</td>
+               			<td th:text="${flights.month}">Month</td>
+						<td th:text="${flights.dayMonth}">Day</td>
+						<td th:text="${flights.depTime}">Departure Time</td>
+               			<td th:text="${flights.origin}">Origin</td>
+               			<td th:text="${flights.dest}">Destination</td>
+						<td th:text="${flights.distance}">Distance</td>
+            	</tr>
+            <tr>
+               <td id="author1" align="center">Gerald's Game</td>
+               <td align="justify"> A woman accidentally kills her husband during foreplay. They had driven out to a 
+	remote area in an attempt to reignite their flailing relationship. 
+		Handcuffed to the bed, she soon becomes delirious</td>
+               <td  align="center"> <img id="1_img" src="images/1.jpg" alt="Gerald's Game"> </td>
+	<td align="center"><button onclick="changeFirst()" onmouseover="mOver(this)" onmouseout="mOut(this)">Author</button> </td>
+            </tr>
+            <tr>
+               <td id="author2"  align="center">Flower in the Attic</td>
+               <td align="justify"> Four perfect children, Chris, Cathy, Carrie and Cory live with their beautiful Momma and their handsome Daddy. An accident rips their perfect lives apart, and Momma becomes
+	 distant and the children have to grow up too fast, with Chris and Cathy looking after their little brother and sister.</td>
+               <td align="center"> <img id="2_img" src="images/2.jpg" alt="Flower in the Attic"></td>
+	<td align="center"><button onclick="changeSecond()" onmouseover="mOver(this)" onmouseout="mOut(this)">Author</button> </td>
+            </tr>
+            <tr>
+               <td id="author3"  align="center">Pride and Prejudice</td>
+               <td align="justify"> Pride and Prejudice is an 1813 novel of manners by Jane Austen. The novel follows the character development of Elizabeth Bennet, the protagonist of the book, who learns about the repercussions of 
+	hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness. </td>
+               <td  align="center"> <img id="3_img" src="images/3.jpg" alt="Pride and Prejudice"></td>
+	<td align="center"><button onclick="changeThird()" onmouseover="mOver(this)" onmouseout="mOut(this)">Author</button> </td>
+	<td>
+            </tr>
+	</tbody>
+	</table>	
+	</div>
+    </body>
+   <script src="main.js"> </script>
+</html>    
