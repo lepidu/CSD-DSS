@@ -8,8 +8,9 @@ import com.example.flights.entity.Flight;
 public interface FlightService {
 
 
-	String saveFlight(Flight flight);
-	List<Flight> getAllFlight();
-	Flight getFlightById(String id);
-	String deleteFlightById(String id);
+	public Flight saveFlight(Flight flight);
+	public List<Flight> getAllFlight();
+	public Flight getFlightById(String id);
+	public void deleteFlightById(String id);
+	public Flight updateFlight(Flight flight);
 }

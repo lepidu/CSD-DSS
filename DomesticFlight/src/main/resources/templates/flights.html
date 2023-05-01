@@ -11,17 +11,34 @@
     	<div class="row">
     		<h1>Flights List </h1>
     	</div>
+    	<div class="row">
+    	<a th:href="@{/flights/newFlight}" class="btn btn-info">Add Flight</a>
+    	</div>
         	<table id="table">
 			<thead>
           		<tr>
                			<th>ID</th>
                			<th>Year</th>
                			<th>Month</th>
-						<th>Day</th>
+						<th>Day of month</th>
+						<th>Day of week</th>
 						<th>Departure Time</th>
+						<th>CRS Departure Time</th>
+						<th>Arrive Time</th>
+						<th>CRS Arrive Time</th>
+						<th>Elapsed Time</th>
+						<th>CRS Elapsed Time</th>
+						<th>Air Time</th>
+						<th>Arrive Delay</th>
+						<th>Departure Delay</th>
                			<th>Origin</th>
                			<th>Destination</th>
 						<th>Distance</th>
+						<th>Taxi In</th>
+						<th>Taxi Out</th>
+						<th>Cancelled</th>
+						<th>Diverted</th>
+						<th>something</th>
             	</tr>
         	</thead>
 			<tbody>
@@ -30,11 +47,28 @@
                			<td th:text="${flights.id}">ID</td>
                			<td th:text="${flights.year}">Year</td>
                			<td th:text="${flights.month}">Month</td>
-						<td th:text="${flights.dayMonth}">Day</td>
+						<td th:text="${flights.dayMonth}">Day of month</td>
+						<td th:text="${flights.dayWeek}">Day of week</td>
 						<td th:text="${flights.depTime}">Departure Time</td>
+						<td th:text="${flights.CRSdepTime}">CRS Departure Time</td>
+						<td th:text="${flights.arrTime}">Arrive Time</td>
+						<td th:text="${flights.CRSarrTime}">CRS Arrive Time</td>
+						<td th:text="${flights.elapsedTime}">Elapsed Time</td>
+						<td th:text="${flights.CRSelapsedTime}">CRS Elapsed Time</td>
+						<td th:text="${flights.airTime}">Air Time</td>
+						<td th:text="${flights.arrDelay}">Arrive Delay</td>
+						<td th:text="${flights.depDelay}">Departure Delay</td>
                			<td th:text="${flights.origin}">Origin</td>
                			<td th:text="${flights.dest}">Destination</td>
 						<td th:text="${flights.distance}">Distance</td>
+						<td th:text="${flights.taxiIn}">Taxi In</td>
+						<td th:text="${flights.taxiOut}">Taxi Out</td>
+						<td th:text="${flights.cancelled}">Cancelled</td>
+						<td th:text="${flights.diverted}">Diverted</td>
+						<td>
+						<a th:href="@{/flights/update/{id}(id=${flights.id})}" class="btn btn-info">Update</a>
+						<a th:href="@{/flights/{id}(id=${flights.id})}" class="btn btn-danger">Delete</a>
+						</td>
             	</tr>
 	</tbody>
 	</table>	

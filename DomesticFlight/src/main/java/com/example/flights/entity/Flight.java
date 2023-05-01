@@ -75,8 +75,8 @@ public class Flight {
 	public int getCRSdepTime() {
 		return CRSdepTime;
 	}
-	public void setCRSdepTime(int cRSdepTime) {
-		CRSdepTime = cRSdepTime;
+	public void setCRSdepTime(int CRSdepTime) {
+		this.CRSdepTime = CRSdepTime;
 	}
 	public int getArrTime() {
 		return arrTime;
@@ -87,8 +87,8 @@ public class Flight {
 	public int getCRSarrTime() {
 		return CRSarrTime;
 	}
-	public void setCRSarrTime(int cRSarrTime) {
-		CRSarrTime = cRSarrTime;
+	public void setCRSarrTime(int CRSarrTime) {
+		this.CRSarrTime = CRSarrTime;
 	}
 	public int getElapsedTime() {
 		return elapsedTime;
@@ -99,8 +99,8 @@ public class Flight {
 	public int getCRSelapsedTime() {
 		return CRSelapsedTime;
 	}
-	public void setCRSelapsedTime(int cRSelapsedTime) {
-		CRSelapsedTime = cRSelapsedTime;
+	public void setCRSelapsedTime(int CRSelapsedTime) {
+		this.CRSelapsedTime = CRSelapsedTime;
 	}
 	public int getAirTime() {
 		return airTime;
@@ -162,8 +162,9 @@ public class Flight {
 	public void setDiverted(int diverted) {
 		this.diverted = diverted;
 	}
-	public Flight(String id, int year, int month, int dayMonth, int dayWeek, int depTime, int cRSdepTime, int arrTime,
-			int cRSarrTime, int elapsedTime, int cRSelapsedTime, int airTime, int arrDelay, int depDelay, String origin,
+	
+	public Flight(String id, int year, int month, int dayMonth, int dayWeek, int depTime, int CRSdepTime, int arrTime,
+			int CRSarrTime, int elapsedTime, int CRSelapsedTime, int airTime, int arrDelay, int depDelay, String origin,
 			String dest, int distance, int taxiIn, int taxiOut, int cancelled, int diverted) {
 		super();
 		this.id = id;
@@ -172,11 +173,11 @@ public class Flight {
 		this.dayMonth = dayMonth;
 		this.dayWeek = dayWeek;
 		this.depTime = depTime;
-		this.CRSdepTime = cRSdepTime;
+		this.CRSdepTime = CRSdepTime;
 		this.arrTime = arrTime;
-		this.CRSarrTime = cRSarrTime;
+		this.CRSarrTime = CRSarrTime;
 		this.elapsedTime = elapsedTime;
-		this.CRSelapsedTime = cRSelapsedTime;
+		this.CRSelapsedTime = CRSelapsedTime;
 		this.airTime = airTime;
 		this.arrDelay = arrDelay;
 		this.depDelay = depDelay;

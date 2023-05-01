@@ -14,10 +14,9 @@ public class FlightServiceImp implements FlightService {
 	FlightRepository flightRepo;
 	
 	@Override
-	public String saveFlight(Flight flight) {
+	public Flight saveFlight(Flight flight) {
 		// TODO Auto-generated method stub
-		flightRepo.save(flight);
-		return "Flight id: "+ flight.getId() + "is saved succesfully";
+		return flightRepo.save(flight);
 	}
 
 	@Override
@@ -33,13 +32,14 @@ public class FlightServiceImp implements FlightService {
 	}
 
 	@Override
-	public String deleteFlightById(String id) {
+	public void deleteFlightById(String id) {
 		// TODO Auto-generated method stub
-		boolean delete = false;
-		if (flightRepo.existsById(id)) {
-			flightRepo.deleteById(id);
-			delete = true;
-		}
-		return "Flight with id: " + id + " deleted status "+ delete;
+		flightRepo.deleteById(id);
+	}
+
+	@Override
+	public Flight updateFlight(Flight flight) {
+		// TODO Auto-generated method stub
+		return flightRepo.save(flight);
 	}
 }
