@@ -1,0 +1,3 @@
+COPY AND PASTE the follow line in application.properties:
+
+spring.data.mongodb.uri=mongodb://hduser:pass123!@35.238.75.125:27017/DomesticFlights?authSource=admin
