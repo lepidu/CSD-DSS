@@ -5,6 +5,6 @@ import com.example.crud.entity.Role;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 
-public interface roleRepository extends MongoRepository<Role, Long> {
+public interface RoleRepository extends MongoRepository<Role, Long> {
     Role findByName(String name);
 }
