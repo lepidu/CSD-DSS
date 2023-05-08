@@ -11,8 +11,8 @@
 	<nav>
 	<ul>
 		<li><a href="/index.html"  th:href="@{/index.html}">Home</a></li>
-		<li><a href="/newFlight.html" th:href="@{/newFlight.html}">New Flight</a></li>
-		<li><a href="">Update Flight</a></li>
+		<li><a href="/newFlight.html" th:href="@{/index/newFlight}">New Flight</a></li>
+		<li><a >Update Flight</a></li>
 	</ul>
 	</nav>
 	<div>
@@ -21,7 +21,7 @@
 			<h2>The Dataset information of flights between 2016 and 2018</h2>
 		</div>
 		<div class="first">
-			<a th:href="@{index/newFlight.html}">Add Flight</a>
+			<button th:href="@{/newFlight.html}">Add Flight</button>
 		</div>
 		<table>
 			<thead>
@@ -56,15 +56,15 @@
 					<td th:text="${flights.Distance}">Distance</td>
 					<td>
 						<a  th:href="@{/index/update/{_id}(_id=${flights._id})}">Update</a>
-						<a  th:href="@{/index/{_id}(_id=${flights._id})}">Delete</a>
+						<a th:href="@{/index/{_id}(_id=${flights._id})}">Delete</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		
-	<a th:if="${currentPage < totalPages - 1}" th:href="@{/index.html(page=${currentPage + 1}, query=${searchQuery})}">Next</a>
-	<a th:if="${currentPage > 0}" th:href="@{/index.html(page=${currentPage - 1}, query=${searchQuery})}">Previous</a>
 	</div>
+
+<a th:if="${currentPage < totalPages - 1}" th:href="@{/index.html(page=${currentPage + 1}, query=${searchQuery})}">Next</a>
+<a th:if="${currentPage > 0}" th:href="@{/index.html(page=${currentPage - 1}, query=${searchQuery})}">Previous</a>
 </body>
 <script src="main.js"> </script>
 
