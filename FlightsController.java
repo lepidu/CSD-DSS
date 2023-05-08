@@ -45,7 +45,7 @@ public class FlightsController {
 	    model.addAttribute("currentPage", page);
 	    model.addAttribute("totalPages", flights.getTotalPages());
 	    
-	    return "index";
+	    return "index.html";
 	}
 
 	@GetMapping("/index/newFlight")
@@ -55,18 +55,18 @@ public class FlightsController {
 		return "newFlight";
 	}
 
+	@PostMapping("/index")
+	public String saveFlights(@ModelAttribute ("flights")Flights flights) {
+		repository.save(flights);
+		return "redirect:/index";
+	}
+
 	@GetMapping ("/index/update/{_id}")
 	public String updateAllFlightById(@PathVariable String _id, Model model){
 		model.addAttribute("flights", repository.findById(_id).orElse(null));
 		return "update";
 	}
-
-	@PostMapping("/index")
-	public String saveFlights(@ModelAttribute ("flights") Flights flights) {
-		repository.save(flights);
-		return "redirect:/index";
-	}
-
+	
 	@PostMapping ("/index/{_id}")
 	public String updateFlight(@PathVariable String _id, @ModelAttribute("flights") Flights flight, Model model ){
 		Flights existingFlight = repository.findById(_id).get();
@@ -108,7 +108,7 @@ public class FlightsController {
 
 	
 	@GetMapping("/index/{_id}")
-    public String deleteFlightById(@PathVariable("_id") String _id ) {
+    public String deleteFlightById(@PathVariable("_id") String _id) {
         repository.deleteById(_id);
         return "redirect:/index";
     }
